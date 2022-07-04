@@ -5,6 +5,24 @@ using UnityEngine;
 public class MenuController : MonoBehaviour
 {
 
+    private int volume; 
+
+    void Start()
+    {
+        this.loadPrefs();
+    }
+
+    public void loadPrefs()
+    {
+        this.volume = PlayerPrefs.GetInt("Volume", 0);
+    }
+
+    public void saveVolume(int volume)
+    {
+        PlayerPrefs.SetInt("Volume", volume);
+        PlayerPrefs.Save();
+    }
+
     [SerializeField]
     private string MenuState = "none";
 
@@ -25,7 +43,6 @@ public class MenuController : MonoBehaviour
 
     [SerializeField]
     private GameObject PreviousPanel;
-
 
 
     public void setState(string state)
@@ -87,55 +104,8 @@ public class MenuController : MonoBehaviour
 
     }
 
-    
 
-
-
-
-    //public void setStateStart()
-    //{
-
-    //    //code for scene change
-    //    this.MenuState = "start";
-    //}
-
-    //public void setStateOptions()
-    //{   
-
-    //    this.MenuState = "options";
-    //    this.OptionsPanel = 
-    //}
-
-    //public void setStateMain()
-    //{
-    //    this.MenuState = "main";
-    //}
-
-    //public void setStateStart()
-    //{
-    //    this.MenuState = state;
-    //}
-
-    //public void setStateStart()
-    //{
-    //    this.MenuState = state;
-    //}
-
-    //public void setStateStart()
-    //{
-    //    this.MenuState = state;
-    //}
-
-    //private void MenuManager()
-    //{
-
-    //}
-
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
+   
 
     //// Update is called once per frame
     //void Update()
