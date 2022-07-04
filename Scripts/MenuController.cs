@@ -8,7 +8,6 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private string MenuState = "none";
 
-
     [SerializeField]
     private GameObject MainPanel;
 
@@ -62,6 +61,8 @@ public class MenuController : MonoBehaviour
 
 
     }
+
+    
 
 
 
