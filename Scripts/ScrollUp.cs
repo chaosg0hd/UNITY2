@@ -11,7 +11,7 @@ public class ScrollUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreditsPanel.transform.position = new Vector3(500, -800, 0);
+        CreditsPanel.transform.position = new Vector3(800, 800, 800);
         ;
     }
 
@@ -19,8 +19,6 @@ public class ScrollUp : MonoBehaviour
     void Update()
     {
         CreditsPanel.transform.position = CreditsPanel.transform.position + new Vector3(0, .5f , 0);
-
-        
     }
 
 

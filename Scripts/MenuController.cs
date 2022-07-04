@@ -83,6 +83,7 @@ public class MenuController : MonoBehaviour
 
             case "exit":
 
+                MainPanel.SetActive(false);
                 ExitPanel.SetActive(true);
 
                 break;
