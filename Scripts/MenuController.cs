@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -58,8 +59,10 @@ public class MenuController : MonoBehaviour
                 MainPanel.SetActive(true);
 
                 break;
+
             case "start":
-                //code for scene change
+
+                SceneManager.LoadScene(1);
 
                 break;
 
