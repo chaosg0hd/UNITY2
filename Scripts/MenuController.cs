@@ -20,13 +20,24 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private GameObject ExitPanel;
 
+    [SerializeField]
+    private GameObject CurrentPanel;
+
+    [SerializeField]
+    private GameObject PreviousPanel;
+
+
+
     public void setState(string state)
     {
         this.MenuState = state;
 
+
         switch (state)
         {
             case "none":
+
+                //CurrentPanel = MainPanel;
                 MainPanel.SetActive(true);
 
                 break;
@@ -36,22 +47,36 @@ public class MenuController : MonoBehaviour
                 break;
 
             case "settings":
-                MainPanel.SetActive(false);
-                OptionPanel.SetActive(true);
+
+                PreviousPanel = CurrentPanel;
+                PreviousPanel.SetActive(false);
+                CurrentPanel = OptionPanel;
+                OptionPanel.SetActive(true);                             
+                
                 break;
 
             case "credits":
-                MainPanel.SetActive(false);
+
+                PreviousPanel = CurrentPanel;
+                PreviousPanel.SetActive(false);
+                CurrentPanel = CreditsPanel;
                 CreditsPanel.SetActive(true);
+
                 break;
 
             case "exit":
+
                 ExitPanel.SetActive(true);
+
                 break;
 
 
             case "back":
-                MainPanel.SetActive(true);
+
+                CurrentPanel.SetActive(false);
+                CurrentPanel = PreviousPanel;
+                CurrentPanel.SetActive(true);
+
                 break;
 
 
