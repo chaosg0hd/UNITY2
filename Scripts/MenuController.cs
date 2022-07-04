@@ -104,6 +104,12 @@ public class MenuController : MonoBehaviour
 
     }
 
+    public void endGame()
+    {
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false; 
+    }
+
 
    
 
